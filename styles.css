@@ -1,38 +1,40 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"); */
+
 canvas {
-    background-color: lightblue;
-    border: 2px solid black;
-    display: block;
+  background-color: lightblue;
+  border: 2px solid black;
+  display: block;
 }
 
 /* Phong cách cho background và body */
 body {
-    background-color: #70c5ce; /* Màu xanh dương nhẹ giống background của game */
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: 'url(./assets/background.png)';
-    background-size: repeat;
+  background-color: #70c5ce; /* Màu xanh dương nhẹ giống background của game */
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: "url(./assets/background.png)";
+  background-size: repeat;
 }
 
 /* CSS for button */
 .button-19 {
   appearance: button;
-  background-color: #1899D6;
+  background-color: #1899d6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: din-round,sans-serif;
+  font-family: din-round, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   line-height: 20px;
   margin: 0;
   outline: none;
@@ -42,7 +44,7 @@ body {
   text-transform: uppercase;
   touch-action: manipulation;
   transform: translateZ(0);
-  transition: filter .2s;
+  transition: filter 0.2s;
   user-select: none;
   -webkit-user-select: none;
   vertical-align: middle;
@@ -52,7 +54,7 @@ body {
 
 .button-19:after {
   background-clip: padding-box;
-  background-color: #1CB0F6;
+  background-color: #1cb0f6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -84,15 +86,15 @@ body {
   background: none;
 }
 
-.choose-game{
-    gap: 10px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.choose-game {
+  gap: 10px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.label-theme{
+.label-theme {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -191,4 +193,21 @@ option:focus {
 option .icon {
   font-size: 1.6rem;
   text-box: trim-both cap alphabetic;
+}
+
+.flappy-text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 32px;
+  text-align: center;
+  color: #ff0; /* Màu vàng */
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, 0px 3px 0 #000, 3px 0px 0 #000, -3px 0px 0 #000,
+    0px -3px 0 #000; /* Viền đen dày */
+  letter-spacing: 2px;
+}
+
+.flappy-gradient {
+  background: linear-gradient(to bottom, #ff0 40%, #0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
