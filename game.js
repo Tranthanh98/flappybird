@@ -134,8 +134,8 @@ function resetGame() {
   bird = {
     x: 50,
     y: 350,
-    width: 60 * radioSize,
-    height: 50 * radioSize,
+    width: 50 * radioSize,
+    height: 42 * radioSize,
     velocity: 0,
     gravity: 0.5,
   };
@@ -185,7 +185,13 @@ function drawPipes() {
       startY += pipe.width + 10;
     }
     if (decorImg.src) {
-      ctx.drawImage(decorImg, pipe.x - 8, startY, pipe.width + 16, pipe.bottom);
+      ctx.drawImage(
+        decorImg,
+        (pipe.x - 8) * radioSize,
+        startY,
+        pipe.width + 16 * radioSize,
+        pipe.bottom
+      );
     }
 
     ctx.fillRect(pipe.x, 0, pipe.width, pipe.top);
@@ -341,11 +347,11 @@ function updateGame() {
   if (bird.y + bird.height > canvas.height || bird.y < 0) gameOver = true;
 
   if (frame % Math.floor(100 * radioSize) === 0) {
-    let pipeHeight = Math.random() * (canvas.height / 2) * radioSize;
+    let pipeHeight = Math.random() * (canvas.height / 2);
     pipes.push({
-      x: canvas.width,
+      x: canvas.width * radioSize,
       width: 50 * radioSize,
-      top: pipeHeight,
+      top: pipeHeight * radioSize,
       bottom: (canvas.height - pipeHeight - 150) * radioSize,
       bottomY: (pipeHeight + 150) * radioSize,
     });
@@ -359,7 +365,7 @@ function updateGame() {
     }
     if (
       bird.x + bird.width - collisionBuffer > pipe.x &&
-      bird.x + collisionBuffer < pipe.x + pipe.width &&
+      bird.x + collisionBuffer + 5 < pipe.x + pipe.width &&
       (bird.y + bird.height - collisionBuffer > pipe.bottomY ||
         bird.y + collisionBuffer < pipe.top)
     ) {
