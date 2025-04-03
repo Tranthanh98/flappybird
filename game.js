@@ -134,8 +134,8 @@ function resetGame() {
   bird = {
     x: 50,
     y: 350,
-    width: 50 * radioSize,
-    height: 42 * radioSize,
+    width: 45 * radioSize,
+    height: 40 * radioSize,
     velocity: 0,
     gravity: 0.5,
   };
@@ -187,10 +187,10 @@ function drawPipes() {
     if (decorImg.src) {
       ctx.drawImage(
         decorImg,
-        (pipe.x - 8) * radioSize,
+        pipe.x - 8,
         startY,
-        pipe.width + 16 * radioSize,
-        pipe.bottom
+        pipe.width + 16,
+        pipe.bottom - 20
       );
     }
 
