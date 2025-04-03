@@ -362,6 +362,7 @@ function updateGame() {
     if (pipe.x + pipe.width < 0) {
       pipes.shift();
       score++;
+      playSound.src && playSound.play();
     }
     if (
       bird.x + bird.width - collisionBuffer > pipe.x &&
@@ -389,7 +390,6 @@ function updateGame() {
 
 function handleInput() {
   if (!gameOver) {
-    playSound.src && playSound.play();
     bird.velocity = -7 * radioSize;
   }
 }
